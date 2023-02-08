@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="Start">
+    <file>startbutton.qrc</file>
+  </qresource>
+</RCC>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="42.3331mm" height="42.3338mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 4233 4233"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil0 {fill:#FEFEFE}
+    .fil1 {fill:#EA0D2C}
+   ]]>
+  </style>
+ </defs>
+ <g id="Livello_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_912403888">
+   <path class="fil0" d="M3232 0l-2231 0c-553,0 -1001,448 -1001,1001l0 2231c0,553 448,1001 1001,1001 1,0 1,0 2,0l2228 0c1,0 1,0 2,0 553,0 1001,-448 1001,-1001l0 -2231c0,-553 -448,-1001 -1001,-1001z"/>
+   <path class="fil1" d="M1001 2002l0 0c276,0 527,-112 708,-293l0 0 1694 -1694c-55,-9 -112,-15 -170,-15l-2231 0c-553,0 -1001,448 -1001,1001l0 1001 1001 0z"/>
+   <path class="fil1" d="M3650 91l-1779 1779 0 0c-223,223 -530,361 -870,361l0 0 0 0 -1001 0 0 1001c0,237 82,454 220,625l3638 -3638c-63,-51 -133,-94 -207,-128z"/>
+   <path class="fil1" d="M2002 3232l0 0c0,-339 138,-646 361,-869l0 0 1779 -1779c-33,-73 -75,-141 -124,-203l-3637 3637c170,135 386,215 620,215 1,0 1,0 2,0l999 0 0 -1002z"/>
+   <path class="fil1" d="M2524 2524l0 0c-181,181 -293,431 -293,707l0 0 0 1002 999 0c1,0 1,0 2,0 553,0 1001,-448 1001,-1001l0 -2231c0,-58 -5,-115 -15,-171l-1694 1694z"/>
+  </g>
+ </g>
+</svg>

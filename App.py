@@ -50,6 +50,14 @@ class MyApp(QWidget):
         self.deviceLog.clear()
         self.deviceLog.setReadOnly(True)
         self.statusFlashUnlock.setChecked(False)
+        self.statusFlashErase.setChecked(False)
+        self.statusFlashWrite.setChecked(False)
+        self.statusFlashLock.setChecked(False)
+        self.statusFlashUnlock.setCheckable(False)
+        self.statusFlashErase.setCheckable(False)
+        self.statusFlashWrite.setCheckable(False)
+        self.statusFlashLock.setCheckable(False)
+
 
     def versionselection(self):
         if(self.versionSelect.count() != 0):
@@ -125,10 +133,18 @@ class MyApp(QWidget):
     def startClicked(self):
         self.inSerialNumber=self.serialNumber.text()
         self.statusProgress.setValue(0)
+        self.statusFlashUnlock.setCheckable(True)
+        self.statusFlashErase.setCheckable(True)
+        self.statusFlashWrite.setCheckable(True)
+        self.statusFlashLock.setCheckable(True)
         self.statusFlashUnlock.setChecked(False)
         self.statusFlashErase.setChecked(False)
         self.statusFlashWrite.setChecked(False)
         self.statusFlashLock.setChecked(False)
+        self.statusFlashUnlock.setCheckable(False)
+        self.statusFlashErase.setCheckable(False)
+        self.statusFlashWrite.setCheckable(False)
+        self.statusFlashLock.setCheckable(False)
         if(self.inSerialNumber == ''):
             QMessageBox.warning(self,"WARNING", "Enter a valid PCB Serial Number")
         else:
@@ -149,6 +165,7 @@ class MyApp(QWidget):
                 self.commentSection.setReadOnly(False)
                 self.actionProgram.setEnabled(True)
                 self.actionCancel.setEnabled(False)
+                self.actionCheck.setEnabled(True)
                 self.serialNumber.setReadOnly(False)
                 self.deviceSelect.setEnabled(True)
                 self.versionSelect.setEnabled(True)
@@ -167,21 +184,29 @@ class MyApp(QWidget):
         stmDevice = StmProgrammer.stmdevice()
         if(stmDevice.unlock()!=0):
             return -1
+        self.statusFlashUnlock.setCheckable(True)
         self.statusFlashUnlock.setChecked(True)
+        self.statusFlashUnlock.setCheckable(False)
         self.statusProgress.setValue(25)
         if(stmDevice.erase()!=0):
             return -1
+        self.statusFlashErase.setCheckable(True)
         self.statusFlashErase.setChecked(True)
+        self.statusFlashErase.setCheckable(False)
         self.statusProgress.setValue(50)
         if(stmDevice.flash(self.inFname)!=0):
             return -1
         if(stmDevice.reset()!=0):
             return -1
+        self.statusFlashWrite.setCheckable(True)
         self.statusFlashWrite.setChecked(True)
+        self.statusFlashWrite.setCheckable(False)
         self.statusProgress.setValue(75)
         if(stmDevice.lock()!=0):
             return -1
+        self.statusFlashLock.setCheckable(True)
         self.statusFlashLock.setChecked(True)
+        self.statusFlashLock.setCheckable(False)
         self.statusProgress.setValue(100)
         return 0
 
@@ -214,9 +239,6 @@ class MyApp(QWidget):
         with open(self.fileFolder+'\\'+ 'device_log.csv','w',encoding='UTF8') as log_file:
             device_writer = csv.writer(log_file)
             device_writer.writerows(rows)
-        self.commentSection.setReadOnly(False)
-        self.actionProgram.setEnabled(True)
-        self.actionCheck.setEnabled(True)
 
 
 if __name__ == '__main__':

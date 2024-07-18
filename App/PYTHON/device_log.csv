@@ -1,0 +1,53 @@
+PCB Serial Number,Last Programmed,Comment,Files used
+first,21-07-2023 18:07:44,"21-07-2023 18:07:44 : 
+21-07-2023 18:04:36 : 
+21-07-2023 18:03:29 : 
+21-07-2023 18:02:03 : 
+21-07-2023 18:01:17 : 
+21-07-2023 17:57:39 : 
+21-07-2023 17:57:33 : 
+21-07-2023 17:56:06 : 
+21-07-2023 17:55:57 : ","21-07-2023 18:07:44 : C:/Users/skatore/STM32CubeIDE/workspace_python/Python_master/Release/Python_master.elf
+21-07-2023 18:04:36 : C:/Users/skatore/STM32CubeIDE/workspace_python/Python_master/Release/Python_master.elf
+21-07-2023 18:03:29 : C:/Users/skatore/STM32CubeIDE/workspace_python/Python_master/Release/Python_master.elf
+21-07-2023 18:02:03 : C:/Users/skatore/STM32CubeIDE/workspace_python/Python_master/Release/Python_master.elf
+21-07-2023 18:01:17 : C:/Users/skatore/STM32CubeIDE/workspace_python/Python_master/Release/Python_master.elf
+21-07-2023 17:57:39 : C:/Users/skatore/STM32CubeIDE/workspace_python/Python_slave/Release/Python_slave.elf
+21-07-2023 17:57:33 : C:/Users/skatore/STM32CubeIDE/workspace_python/Python_slave/Release/Python_slave.elf
+21-07-2023 17:56:06 : C:/Users/skatore/STM32CubeIDE/workspace_python/Python_master/Release/Python_master.elf
+21-07-2023 17:55:57 : C:/Users/skatore/STM32CubeIDE/workspace_python/Python_master/Release/Python_master.elf"
+test,28-07-2023 12:21:11,"28-07-2023 12:21:11 : 
+25-07-2023 16:26:17 : 
+25-07-2023 16:25:21 : 
+25-07-2023 16:23:33 : 
+25-07-2023 16:22:48 : 
+24-07-2023 16:22:07 : 
+24-07-2023 16:21:09 : ","28-07-2023 12:21:11 : C:/Users/skatore/STM32CubeIDE/workspace_python/Python_master/Release/Python_master.elf
+25-07-2023 16:26:17 : C:/Users/skatore/STM32CubeIDE/workspace_python/Python_slave/Release/Python_slave.elf
+25-07-2023 16:25:21 : C:/Users/skatore/STM32CubeIDE/workspace_python/Python_master/Release/Python_master.elf
+25-07-2023 16:23:33 : C:/Users/skatore/STM32CubeIDE/workspace_python/Python_master/Release/Python_master.elf
+25-07-2023 16:22:48 : C:/Users/skatore/STM32CubeIDE/workspace_python/Python_slave/Release/Python_slave.elf
+24-07-2023 16:22:07 : C:/Users/skatore/STM32CubeIDE/workspace_python/Python_slave/Release/Python_slave.elf
+24-07-2023 16:21:09 : C:/Users/skatore/STM32CubeIDE/workspace_python/Python_master/Release/Python_master.elf"
+123,13-10-2023 15:44:05,"13-10-2023 15:44:05 : 
+13-10-2023 15:42:23 : 
+13-10-2023 15:41:37 : 
+13-10-2023 15:40:39 : 
+13-10-2023 12:23:06 : 
+13-10-2023 12:08:23 : ","13-10-2023 15:44:05 : C:/Users/skatore/STM32CubeIDE/workspace_python/Python_master/Release/Python_master.elf
+13-10-2023 15:42:23 : C:/Users/skatore/STM32CubeIDE/workspace_python/Python_master/Release/Python_master.elf
+13-10-2023 15:41:37 : C:/Users/skatore/STM32CubeIDE/workspace_python/Python_master/Release/Python_master.elf
+13-10-2023 15:40:39 : C:/Users/skatore/STM32CubeIDE/workspace_python/Python_master/Release/Python_master.elf
+13-10-2023 12:23:06 : C:/Users/skatore/STM32CubeIDE/workspace_python/Python_master/Release/Python_master.elf
+13-10-2023 12:08:23 : C:/Users/skatore/STM32CubeIDE/workspace_python/Python_master/Release/Python_master.elf"
+1234m,16-10-2023 16:44:40,"16-10-2023 16:44:40 : 	\\	
+16-10-2023 16:43:47 : 	\\	
+16-10-2023 16:42:28 : ","16-10-2023 16:44:40 : C:/Users/skatore/STM32CubeIDE/workspace_python/Python_master/Release/Python_master.elf
+16-10-2023 16:43:47 : C:/Users/skatore/STM32CubeIDE/workspace_python/Python_master/Release/Python_master.elf
+16-10-2023 16:42:28 : C:/Users/skatore/STM32CubeIDE/workspace_python/Python_master/Release/Python_master.elf"
+1234M,16-10-2023 16:46:53,16-10-2023 16:46:53 : ,16-10-2023 16:46:53 : C:/Users/skatore/STM32CubeIDE/workspace_python/Python_master/Release/Python_master.elf
+123m,16-10-2023 17:12:48,"16-10-2023 17:12:48 : 
+16-10-2023 17:11:55 : 
+16-10-2023 17:11:52 : ","16-10-2023 17:12:48 : C:/Users/skatore/STM32CubeIDE/workspace_python/Python_master/Release/Python_master.elf
+16-10-2023 17:11:55 : C:/Users/skatore/STM32CubeIDE/workspace_python/Python_master/Release/Python_master.elf
+16-10-2023 17:11:52 : C:/Users/skatore/STM32CubeIDE/workspace_python/Python_master/Release/Python_master.elf"

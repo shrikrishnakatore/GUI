@@ -1,11 +1,11 @@
 import sys
 import os
 import csv
-import PyQt6, pathlib
-from PyQt6.QtCore import QTimer, QDateTime, Qt
-from PyQt6.QtWidgets import QApplication, QWidget, QFileDialog, QPlainTextEdit, QMessageBox
-from PyQt6.QtGui import QIcon
-from PyQt6 import uic
+import PyQt5, pathlib
+from PyQt5.QtCore import QTimer, QDateTime, Qt
+from PyQt5.QtWidgets import QApplication, QWidget, QFileDialog, QPlainTextEdit, QMessageBox
+from PyQt5.QtGui import QIcon
+from PyQt5 import uic
 
 import StmProgrammer
 
@@ -33,10 +33,10 @@ class MyApp(QWidget):
         self.resize(900,800)
         self.serialNumber.setReadOnly(True)
         self.filename.setReadOnly(True)
-        self.versionSelect.setInsertPolicy(PyQt6.QtWidgets.QComboBox.InsertPolicy.InsertAlphabetically)
-        self.versionSelect.setSizeAdjustPolicy(PyQt6.QtWidgets.QComboBox.SizeAdjustPolicy.AdjustToContents)
-        self.deviceSelect.setInsertPolicy(PyQt6.QtWidgets.QComboBox.InsertPolicy.InsertAlphabetically)
-        self.deviceSelect.setSizeAdjustPolicy(PyQt6.QtWidgets.QComboBox.SizeAdjustPolicy.AdjustToContents)
+        self.versionSelect.setInsertPolicy(PyQt5.QtWidgets.QComboBox.InsertPolicy.InsertAlphabetically)
+        self.versionSelect.setSizeAdjustPolicy(PyQt5.QtWidgets.QComboBox.SizeAdjustPolicy.AdjustToContents)
+        self.deviceSelect.setInsertPolicy(PyQt5.QtWidgets.QComboBox.InsertPolicy.InsertAlphabetically)
+        self.deviceSelect.setSizeAdjustPolicy(PyQt5.QtWidgets.QComboBox.SizeAdjustPolicy.AdjustToContents)
         self.versionSelect.clear()
         self.deviceSelect.insertItems(0,['None','DC1000','PYTHON','PYRAMID'])
         self.deviceSelect.currentIndexChanged.connect(self.deviceselection)
@@ -53,11 +53,6 @@ class MyApp(QWidget):
         self.statusFlashErase.setChecked(False)
         self.statusFlashWrite.setChecked(False)
         self.statusFlashLock.setChecked(False)
-        self.statusFlashUnlock.setCheckable(False)
-        self.statusFlashErase.setCheckable(False)
-        self.statusFlashWrite.setCheckable(False)
-        self.statusFlashLock.setCheckable(False)
-
 
     def versionselection(self):
         if(self.versionSelect.count() != 0):
@@ -131,27 +126,19 @@ class MyApp(QWidget):
             self.actionProgram.setEnabled(True)
 
     def startClicked(self):
+        self.actionProgram.setEnabled(False)
         self.inSerialNumber=self.serialNumber.text()
         self.statusProgress.setValue(0)
-        self.statusFlashUnlock.setCheckable(True)
-        self.statusFlashErase.setCheckable(True)
-        self.statusFlashWrite.setCheckable(True)
-        self.statusFlashLock.setCheckable(True)
         self.statusFlashUnlock.setChecked(False)
         self.statusFlashErase.setChecked(False)
         self.statusFlashWrite.setChecked(False)
         self.statusFlashLock.setChecked(False)
-        self.statusFlashUnlock.setCheckable(False)
-        self.statusFlashErase.setCheckable(False)
-        self.statusFlashWrite.setCheckable(False)
-        self.statusFlashLock.setCheckable(False)
         if(self.inSerialNumber == ''):
             QMessageBox.warning(self,"WARNING", "Enter a valid PCB Serial Number")
         else:
             if pathlib.Path(self.inFname).is_file():
                 self.browse.setEnabled(False)
                 self.commentSection.setReadOnly(True)
-                self.actionProgram.setEnabled(False)
                 self.actionCancel.setEnabled(True)
                 self.actionCheck.setEnabled(False)
                 self.serialNumber.setReadOnly(True)
@@ -163,7 +150,6 @@ class MyApp(QWidget):
                     QMessageBox.critical(self,"ERROR", "ERROR in Programming , device not programmed !!")
                 self.browse.setEnabled(True)
                 self.commentSection.setReadOnly(False)
-                self.actionProgram.setEnabled(True)
                 self.actionCancel.setEnabled(False)
                 self.actionCheck.setEnabled(True)
                 self.serialNumber.setReadOnly(False)
@@ -176,6 +162,7 @@ class MyApp(QWidget):
                 self.actionCheck.setEnabled(True)
                 self.commentSection.setReadOnly(False)
                 QMessageBox.critical(self,"ERROR", "Selected file dose not exist !!")
+        self.actionProgram.setEnabled(True)
 
     def cancelCliked(self):
         self.actionProgram.setEnabled(True)
@@ -184,29 +171,21 @@ class MyApp(QWidget):
         stmDevice = StmProgrammer.stmdevice()
         if(stmDevice.unlock()!=0):
             return -1
-        self.statusFlashUnlock.setCheckable(True)
         self.statusFlashUnlock.setChecked(True)
-        self.statusFlashUnlock.setCheckable(False)
         self.statusProgress.setValue(25)
         if(stmDevice.erase()!=0):
             return -1
-        self.statusFlashErase.setCheckable(True)
         self.statusFlashErase.setChecked(True)
-        self.statusFlashErase.setCheckable(False)
         self.statusProgress.setValue(50)
         if(stmDevice.flash(self.inFname)!=0):
             return -1
         if(stmDevice.reset()!=0):
             return -1
-        self.statusFlashWrite.setCheckable(True)
         self.statusFlashWrite.setChecked(True)
-        self.statusFlashWrite.setCheckable(False)
         self.statusProgress.setValue(75)
         if(stmDevice.lock()!=0):
             return -1
-        self.statusFlashLock.setCheckable(True)
         self.statusFlashLock.setChecked(True)
-        self.statusFlashLock.setCheckable(False)
         self.statusProgress.setValue(100)
         return 0
 
@@ -242,7 +221,7 @@ class MyApp(QWidget):
 
 
 if __name__ == '__main__':
-    os.environ["PATH"] ="C:\Program Files\STMicroelectronics\STM32Cube\STM32CubeProgrammer\\bin;"+ os.environ["PATH"]
+    os.environ["PATH"] =os.getcwd()+"\\STM32Cube\\STM32CubeProgrammer\\bin;"+ os.environ["PATH"]
     app = QApplication(sys.argv)
     mainwindow = MyApp()
     mainwindow.show()
@@ -250,6 +229,3 @@ if __name__ == '__main__':
         sys.exit(app.exec())
     except SystemExit:
         print('Closing Window...')
-
-
-
